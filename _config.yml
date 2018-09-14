@@ -8,3 +8,5 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://po.pdis.tw" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
 
+plugins:
+  - jekyll-sitemap
