@@ -1,0 +1,18 @@
+<div class="container-fluid">
+        <div class="container justify-center flex-column">
+            <h1 class="hero-text text-center section-heading">{{include.faq.headline}}</h1>
+            <h1 class="text-center">{{include.faq.title}}</h1>
+            <div class="flex-row justify-center">
+                {% for QA in include.faq.list %}
+                    <div class="card">
+                        <h2>{{QA.Q}}</h2>
+                        <span class="answer">
+                            <h2>{{QA.A.title}}</h2>
+                            <hr>
+                            {{QA.A.content | markdownify }}
+                        </span>
+                    </div>
+                {% endfor %}
+            <div class="section-end"></div>
+        </div>
+    </div>

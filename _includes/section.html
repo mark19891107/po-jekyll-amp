@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="container justify-center flex-column">
+        <h1 class="hero-text text-center section-heading">{{include.section.headline}}</h1>
+        <h1 class="text-center">{{include.section.title}}</h1>
+        {% if include.index==1 %}
+        <div class="flex-row flex-row-reverse">
+        {% else %}
+        <div class="flex-row">
+            {% endif %}
+            <div class="col-md-6">
+                <div>
+                    <amp-img src="{{include.section.img}}" alt="" layout="responsive" width="518" height="291"></amp-img>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="text-justify">
+                    {{include.section.content | markdownify }}
+                </p>
+            </div>
+        </div>
+        <div class="section-end"></div>
+    </div>
+</div>

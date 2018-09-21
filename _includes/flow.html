@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="container justify-center flex-column">
+        {% if include.index==1 %}
+        <div class="flex-row flex-row-reverse">
+        {% else %}
+        <div class="flex-row">
+            {% endif %}
+            <div class="col-md-6">
+                <div>
+                    <amp-img src="{{include.flow.img}}" alt="" layout="responsive" width="518" height="291"></amp-img>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="text-justify">
+                    {{include.flow.content | markdownify }}
+                </p>
+            </div>
+        </div>
+        <div class="section-end"></div>
+    </div>
+</div>

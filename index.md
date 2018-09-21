@@ -1,6 +1,15 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
+
+
+{% for section in site.data.po.sections %}
+{% assign loopindex = forloop.index | modulo: 2 %}
+{% include section.html section=section index=loopindex %}
+{% endfor %}
+
+{% include faq-section.html faq=site.data.po.faq %}
+
+
+    
+

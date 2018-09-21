@@ -1,22 +1,25 @@
-.pdis-blue{
-    color: #10768D;
+*{
+    box-sizing: border-box;
 }
 
-.pdis-dark-blue{
-    color: #032E3D;
-}
-
-.pdis-yellow{
-    color: #DBB608;
-}
-
-.pdis-red{
-    color: #95141E;
-}
-
-.container {
+.container-fluid {
     display: flex;
     border-bottom: solid lightgray 1px;
+}
+
+.container{
+    width: 100%;
+    max-width: 977px;
+    display: flex;
+    margin: auto;
+}
+
+.section-heading{
+    margin: 3rem 0;
+}
+
+.section-end{
+    margin-bottom: 3rem; 
 }
 
 .mobile-only{
@@ -44,7 +47,12 @@
 .flex-row{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+    margin: 15px -15px;
+}
+
+.flex-row-reverse{
+    flex-direction: row-reverse;
 }
 
 .text-justify{
@@ -52,11 +60,11 @@
 }
 
 .block{
-    padding: 0 8vw;
+    padding: 0 5vw;
 }
 
 .text-block {
-    padding: 8vw;
+    padding: 5vw;
 }
 
 .text-block-small{
@@ -79,18 +87,150 @@
     flex-wrap: wrap-reverse;
 }
 
-.card{
-    min-width: 200px;
-    margin: 1em;
-    flex: 1 0 0%;
-}
-
 .img{
     max-width: 200px;
     margin: auto;
 }
 
+.col-md-6{
+    max-width: 50%;
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+.card{
+    min-width: var(--card-size);
+    margin: 0.5rem;
+    flex: 0 0 0%;
+    border: solid var(--main-text) 1px;
+    width:var(--card-size);
+    height: var(--card-size);
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.card h2{
+    text-align: justify;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.answer{
+    position: absolute;
+    opacity: 0;    
+    width: var(--card-size);
+    display: none;
+}
+
+.answer a{
+    text-decoration: none;
+    border-bottom: 1px var(--background) solid;
+    color: var(--background);
+}
+
+.card::before{
+    content: '';
+    height: 30px;
+    width: var(--card-size);
+    background-color: #00000000;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.card:hover::before{
+    height: var(--card-size);
+    background-color: #000000cc;
+}
+
+.card:hover .answer{
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width: var(--card-size);
+    height: var(--card-size);
+    color: white;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.nav{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav li{
+    padding: 25px 10px;
+    border: none;
+    color: var(--main-text);
+}
+
+.nav li a{
+    border: none;
+    color: var(--main-text);
+}
+
+.nav li:hover{
+    background: var(--background);
+}
+
+.nav .active{
+    background: var(--background);
+}
+
+.nav li:hover .sub-nav{
+    display: block;
+}
+
+.nav .sub-nav{
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0px;
+    margin-top: 25px;
+    margin-left: -10px;
+    border-top:solid lightgray 1px;
+}
+
+.nav .sub-nav li{
+    padding: 15px 10px;
+    border: solid lightgray 1px;
+    border-top: none;
+    background-color: white;
+}
+
+.footer{
+    background-color:#231f20;
+    color:white;
+}
+
+.footer a{
+    color: var(--background);
+    border-color: var(--background);
+}
+
+.footer-logo{
+    flex: 1 0 0%;
+    margin-right: -15px;
+}
+
+.footer-logo amp-img{
+    float: right;
+}
+
+.page{
+    margin:3rem 0 ;
+}
+
 @media (max-width: 992px){
+    .container{
+        padding: 0 5vw;
+    }
+
     .mobile-only{
         display: initial;
     }
@@ -101,21 +241,44 @@
         min-height: 50vh;
         min-width: 100%;
     }
-    .card{
-        min-width: 300px;
-        flex: 1 0 0%;
+    .col-md-6{
+        max-width: 100%;
+        margin: 10px 0;
+        flex: 0 0 100%;
+    }
+    .flex-row{
+        margin: 0px 0px;
+    }
+    .footer{
+        padding: 15px 30px 15px 15px;
     }
 }
 
-@media (max-width: 400px){
-    body{
-        font-size: 12px;
+@media (max-width: 425px){
+    .hero-text{
+        font-size: 3.8rem;
     }
-    p{
-        font-size: 1.3em;
+    .nav .sub-nav{
+        width: 100%;
+        position: absolute;
+        left: 10px;
     }
-    .card{
-        min-width: 200px;
-        margin: 0px;
+}
+
+@media (max-width: 375px){
+    .hero-text{
+        font-size: 3rem;
+    }
+    .pre-text{
+        font-size: 0.8rem;
+    }
+    .sub-text{
+        font-size: 2rem;
+    }
+    .small-text{
+        font-size: 0.98rem;
+    }
+    .footer-logo amp-img{
+        float: left;
     }
 }
