@@ -1,0 +1,11 @@
+<div class="img-section">
+    <div class="img">
+        <amp-img src="{{include.data.img}}" alt="" layout="responsive" width="518" height="291"></amp-img>
+    </div>
+    <div class="text">
+        <h3>{{include.data.title}}</h3>
+        <p>
+            {{include.data.content | markdownify }}
+        </p>
+    </div>
+</div>

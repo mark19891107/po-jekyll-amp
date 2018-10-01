@@ -1,3 +1,17 @@
+.head {
+    display: flex;
+    border-bottom: solid lightgray 1px;
+    flex-wrap: wrap-reverse;
+}
+
+.text-block {
+    padding: 5vw 2vw 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
 .pre-text {
     font-weight: 400;
     display: inline-block;
@@ -10,11 +24,13 @@
 }
 
 .hero-text {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 900;
+    font-family: Lato, 'Noto Sans TC';
     text-decoration: underline;
     margin: 15px 0 25px;
     color: var(--main-text);
+    text-align: left;
 }
 
 .sub-text {
@@ -22,37 +38,63 @@
     font-weight: 200;
 }
 
-.small-text{
+.small-text {
     font-weight: 200;
     margin: 3rem 0;
 }
 
-.slide{
-  background-position: center;
-  background-size: cover;
-  transition: all 1s ease-in-out;
-}
-
-.slide1{
-  background-image: url("https://talk.pdis.nat.gov.tw/uploads/default/original/2X/c/cefe13fe0a8de71c30fdc0732003b78e51073d83.JPG");
-}
-
-.slide2{
-  background-image: url("https://talk.pdis.nat.gov.tw/uploads/default/original/2X/0/0501dceb4bbb80b9ff3daba8233d81dfd37c9b6e.JPG");
-}
-
-.slide3{
-  background-image: url("https://talk.pdis.nat.gov.tw/uploads/default/original/2X/d/d469032fab7d43b08d02dc95ea7e57e6192ff92d.JPG");
-}
-
-.responsive-img{
-  width:100%;
+.fifty {
+    min-height: 100vh;
+    flex: 1 1 50%;
 }
 
 .amp-carousel-slide {
-  opacity: 0.5;
+    opacity: 0.5;
 }
+
 .amp-carousel-slide[aria-hidden=false] {
-  transition: opacity 2s;
-  opacity: 1;
+    transition: opacity 2s;
+    opacity: 1;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.pc-only {
+    display: initial;
+}
+
+@media (max-width: 900px) {
+    .mobile-only {
+        display: initial;
+    }
+    .pc-only {
+        display: none;
+    }
+    .fifty {
+        min-height: 50vh;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .text-block {
+        padding: 5vw;
+    }
+    .pre-text {
+        font-size: 0.5rem;
+    }
+    .hero-text {
+        font-size: 3rem;
+    }
+    .sub-text {
+        font-size: 2rem;
+        font-weight: 200;
+    }
+    .small-text {
+        font-weight: 200;
+        margin: 2rem 0;
+        font-size: 0.95rem;
+    }
 }

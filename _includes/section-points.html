@@ -1,0 +1,13 @@
+<div class="points-section">
+    {% for point in include.data %}
+    <div class="point">
+        <!-- <div class="icon">
+            <amp-img src="/assets/font-awesome/{{point.icon}}.svg" alt="" layout="fixed" width="80px" height="80px"></amp-img>
+        </div> -->
+        <div class="text">
+            <h4 class="title">{{point.title}}</h4>
+            <p class="content">{{point.content}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

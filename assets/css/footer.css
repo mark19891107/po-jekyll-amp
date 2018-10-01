@@ -1,0 +1,33 @@
+.footer-back{
+    background-color: #231f20;
+    color: white;
+    width: 100%;
+}
+
+.footer{
+    display: flex;
+    max-width: 1024px;
+    margin: auto;
+    flex-direction: row;
+    padding: 1rem 5vw;
+    align-items: center;
+}
+
+.footer a{
+    color: var(--background);
+    border-color: var(--background);
+}
+
+.footer-logo{
+    flex: 1 0 0%;
+}
+
+.footer-logo amp-img{
+    float: right;
+}
+
+@media (max-width: 375px) {
+    .footer{
+        flex-direction: column;
+    }
+}

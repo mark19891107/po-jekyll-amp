@@ -2,14 +2,50 @@
 layout: default
 ---
 
+{% 
+    include section-text.html 
+    data=site.data.po.what-is-po-network
+%}
 
-{% for section in site.data.po.sections %}
-{% assign loopindex = forloop.index | modulo: 2 %}
-{% include section.html section=section index=loopindex %}
-{% endfor %}
+{% 
+    include section-img.html 
+    data=site.data.po.how-is-po-produced 
+    index=0 
+%}
 
-{% include faq-section.html faq=site.data.po.faq %}
+{% include section-line.html %}
 
+{% 
+    include section-text.html 
+    data=site.data.po.what-po-do
+%}
 
-    
+{% 
+    include section-img.html         
+    data=site.data.po.what-po-should-do
+    index=1 
+%}
 
+{% 
+    include section-img.html         
+    data=site.data.po.po-skill
+    index=0 
+%}
+
+{% include section-line.html %}
+
+{% 
+    include section-text.html         
+    data=site.data.po.how-po-works
+%}
+
+{% 
+    include section-img.html         
+    data=site.data.po.three-levels-meeting
+    index=0 
+%}
+
+{% 
+    include section-points.html         
+    data=site.data.po.three-levels-meeting.points
+%}
